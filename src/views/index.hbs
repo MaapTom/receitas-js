@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="title" content="Receitas - Pratos culinários para o seu dia a dia">
+	<meta name="description" content="Encontre diversas receitas de dar água na boca, envie suas próprias receitas e pronto. Bom... Já ligou o forno?">
+	<meta name="keywords" content="receitas">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://metatags.io/">
+	<meta property="og:title" content="Receitas - Pratos para o seu dia a dia">
+	<meta property="og:description" content="Encontre diversas receitas de dar água na boca, envie suas próprias receitas e pronto. Bom... Já ligou o forno?">
+	<meta property="og:image" content="https://metatags.io/ilustracoes-icones/meta-image.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://metatags.io/">
+	<meta property="twitter:title" content="Receitas - Pratos para o seu dia a dia">
+	<meta property="twitter:description" content="Encontre diversas receitas de dar água na boca, envie suas próprias receitas e pronto. Bom... Já ligou o forno?">
+	<meta property="twitter:image" content="https://metatags.io/ilustracoes-icones/meta-image.png">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/animations.css">
+	<link rel="stylesheet" href="/css/buttons.css">
+	<link rel="stylesheet" href="/css/home.css">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+
+	<title>Receitas - Início</title>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<div class="logo">
+				<img src="/ilustracoes-icones/logo.svg" alt="Logomarca do Site">
+			</div>
+
+			<nav class="navbar">
+				<ul>
+					<li><a href="/" title="Em desenvolvimento" >Exemplos de medidas <sup style="color: tomato">Em desenvolvimento</sup></a></li>
+					<li><a href="/enviar-receita" title="Envie sua receita">Enviar sua receita</a></li>
+				</ul>
+
+				<form action="/search" method="GET" class="pesquisa">
+					<input type="text" name="s" autocomplete="off" placeholder="Encontre uma receita">
+					<button type="submit" title="Pesquisar receita"><img src="/ilustracoes-icones/lupa.svg" alt=""></button>
+				</form>
+
+			</nav>
+
+		</header>
+
+		<main>
+			<div class="info-receita">
+				<h1>Prato do Dia</h1>
+				<h2>{{receita.nome_receita}}</h2>
+				<span>{{receita.rendimento}} | {{receita.tempo_de_preparo}}</span>
+
+				<a href="/receita/{{receita.id}}" class="normal-button" title="Ir para a receita">
+					Mostrar receita
+				</a>
+			</div>
+
+			<div class="img-receita">
+				<img src="/imagens-db/{{receita.imagem}}" alt="Imagem da receita mais recente">
+			</div>
+		</main>
+
+		<section id="categoria">
+			<h1>Categorias de Receitas</h1>
+			
+			<div class="cards">
+				<a href="/categoria/Prato-salgado" title="Mostrar pratos salgados">
+					<img src="/ilustracoes-icones/icon-eggsandbacons.svg" alt="Ilustração de ovos e bacon">
+					<p>Pratos Salgados</p>
+				</a>
+
+				<a href="/categoria/Sobremesa" title="Mostrar sobremesas">
+					<img src="/ilustracoes-icones/chocolate.svg" alt="Ilustração de uma Barra de chocolate">
+					<p>Sobremesas</p>
+				</a>
+
+				<a href="/categoria/Prato-saudavel" title="Mostrar pratos saudáveis">
+					<img src="/ilustracoes-icones/health-plates.svg" alt="Ilustração de Legumes">
+					<p>Pratos Saudáveis</p>
+				</a>
+			</div>
+		</section>
+	</div>
+
+</body>
+</html>

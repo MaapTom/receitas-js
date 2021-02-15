@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="title" content="Envie sua receita - Contribua para a comunidade de mestre cucas!">
+	<meta name="description" content="Encontre diversas receitas de dar água na boca, envie suas próprias receitas e pronto. Bom... Já ligou o forno?">
+	<meta name="keywords" content="receitas">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://metatags.io/enviar-receita">
+	<meta property="og:title" content="Envie sua receita - Contribua para a comunidade de mestre cucas!">
+	<meta property="og:description" content="Encontre diversas receitas de dar água na boca, envie suas próprias receitas e pronto. Bom... Já ligou o forno?">
+	<meta property="og:image" content="https://metatags.io/ilustracoes-icones/meta-image.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://metatags.io/enviar-receita">
+	<meta property="twitter:title" content="Envie sua receita - Contribua para a comunidade de mestre cucas!">
+	<meta property="twitter:description" content="Encontre diversas receitas de dar água na boca, envie suas próprias receitas e pronto. Bom... Já ligou o forno?">
+	<meta property="twitter:image" content="https://metatags.io/ilustracoes-icones/meta-image.png">
+
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/buttons.css">
+	<link rel="stylesheet" href="/css/animations.css">
+	<link rel="stylesheet" href="/css/form.css">
+	<link rel="stylesheet" href="/css/enviar-receita.css">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+
+	<title>Enviar receita - Receitas</title>
+</head>
+
+<body>
+
+	<div class="container">
+		<header>
+
+			<h1>Conte-nos <br>sua receita</h1>
+
+			<nav>
+				<a href="/" title="Voltar para página inicial"><img src="/ilustracoes-icones/arrow-right.svg" alt=""> Voltar
+				</a>
+			</nav>
+
+		</header>
+
+		<main>
+
+			<form action="/save-receita" method="POST" enctype="multipart/form-data">
+
+				<fieldset>
+
+					<div class="input-style inputImagem">
+          	<label for="imagem" title="Clique para adicionar imagem.">Adicionar foto da receita.</label>
+          	<input type="file" name="image" id="imagem" required>
+
+          	<img id="preview" >
+
+						<sub class="mensagem-error">Adicione outra imagem! Aceitamos apenas imagens JPEG, JPG ou PNG.</sub>
+        	</div>
+
+					<div class="input-style">
+          	<label for="nomeReceita">Nome da receita</label>
+          	<input type="text" name="nomeReceita" class="large-input" maxlength="30" required>  
+        	</div>
+
+					<div class="input-style">
+						<label for="ingrediente">Quantidade / Ingrediente</label>
+
+						<div class="input-style input-ingrediente">
+							<input type="text" name="quantidade" class="small-input" placeholder="Ex: 500g" required>
+							<input type="text" name="ingrediente" class="normal-input" placeholder="de Queijo Parmesão" required>
+						</div>
+
+						<a href="" class="normal-button button-add" title="Adicionar mais um ingrediente">+ Adicionar outro ingrediente</a>
+					</div>
+
+					<div class="input-style input-categoria">
+
+						<label>Selecionar categoria da receita</label> 
+						<label for="sobremesa" class="button-options">Sobremesa</label><input type="radio" value="Sobremesa" name="tipo" id="sobremesa">
+						<label for="prato-salgado" class="button-options">Prato Salgado</label><input type="radio" value="Prato-salgado" name="tipo" id="prato-salgado">
+						<label for="prato-saudavel" class="button-options">Prato Saudável</label><input type="radio" value="Prato-saudavel" name="tipo" id="prato-saudavel">
+							
+					</div>
+
+					<div class="input-style">
+						<label for="tempo_preparo">Tempo de preparo</label>
+						<input type="text" name="tempo_preparo" placeholder="Ex: 25 Minutos" required>  
+					</div>
+
+					<div class="input-style">
+						<label for="rendimento">Rendimento</label>
+						<input type="text" name="rendimento" placeholder="Ex: 4 Porções" required>  
+					</div>
+
+					<div class="input-style">
+						<label for="">Modo de preparo</label>
+						<textarea name="modo_de_preparo" rows="10" placeholder="Como se prepara?" required></textarea>
+						<p>Após o envio sua receita será enviado para análise. ;)</p>
+					</div>
+
+					<button type="submit" class="normal-button send-form">Enviar receita</button>
+
+				</fieldset>					
+
+			</form>
+
+		</main>
+
+	</div>
+
+	<script src="script/script.js"></script>
+</body>
+
+</html>

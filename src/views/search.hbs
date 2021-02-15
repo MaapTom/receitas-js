@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/buttons.css">
+	<link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/categoria.css">
+  <link rel="stylesheet" href="/css/search.css">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+
+  <title>Resultado da pesquisa - Receitas</title>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+
+			<div class="logo">
+				<img src="/ilustracoes-icones/logo.svg" alt="Logo">
+			</div>
+
+			<nav>
+				<a href="/" title="Voltar para página inicial"><img src="/ilustracoes-icones/arrow-right.svg" alt=""> Voltar
+				</a>
+			</nav>
+
+		</header>
+
+    <main>
+
+      <h1>Você pesquisou por: {{valorDaPesquisa}}</h1>
+
+      <div class="container-categoria">
+        {{#if receita}}
+
+          <div class="list-cards">
+
+					{{#each receita}}
+						<a href="/receita/{{this.id}}" class="card-receita">
+							<li class="imagem-card"><img src="/imagens-db/{{this.imagem}}" alt="Foto {{this.nome_receita}}"></li>
+							<li class="name-receita">{{this.nome_receita}}</li>
+						</a>
+					{{/each}}
+
+          </div>
+
+          {{else}}
+          <div class="mensagem-de-busca">
+            <img src="/ilustracoes-icones/cry-svg.svg" alt="Ilutração rostinho triste">
+            <p>Desculpe não encontramos nenhuma receita de seu gosto.</p>
+          </div>
+
+        {{/if}}
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

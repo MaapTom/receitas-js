@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="title" content="Receitas - Pratos culinários para o seu dia a dia">
+	<meta name="description" content="Encontre diversas receitas de dar água na boca, envie suas próprias receitas e pronto. Bom... Já ligou o forno?">
+	<meta name="keywords" content="receitas">
+
+  <meta property="og:type" content="website">
+	<meta property="og:url" content="https://metatags.io/receita">
+	<meta property="og:title" content="{{receita.nome_receita}} - Receitas">
+	<meta property="og:description" content="Encontre diversas receitas de dar água na boca, envie suas próprias receitas e pronto. Bom... Já ligou o forno?">
+	<meta property="og:image" content="https://metatags.io/ilustracoes-icones/{{receita.imagem}}">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://metatags.io/receita">
+	<meta property="twitter:title" content="{{receita.nome_receita}} - Receitas">
+	<meta property="twitter:description" content="Encontre diversas receitas de dar água na boca, envie suas próprias receitas e pronto. Bom... Já ligou o forno?">
+	<meta property="twitter:image" content="https://metatags.io/ilustracoes-icones/{{receita.imagem}}">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/animations.css">
+	<link rel="stylesheet" href="/css/receita.css">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+
+  <title>{{receita.nome_receita}} - Receitas</title>
+</head>
+<body>
+  
+  <div class="container">
+    <header>
+
+			<div class="logo">
+				<img src="/ilustracoes-icones/logo.svg" alt="Logo">
+			</div>
+
+			<nav>
+				<a href="/" title="Voltar para página inicial"><img src="/ilustracoes-icones/arrow-right.svg" alt=""> Voltar
+				</a>
+			</nav>
+
+		</header>
+
+    <main>
+      <h1>{{receita.nome_receita}}</h1>
+      <span>{{receita.rendimento}} | {{receita.tempo_de_preparo}}</span>
+
+      <div class="container-receita">
+
+        <div class="imagem-receita">
+          <img src="/imagens-db/{{receita.imagem}}" alt="Imagem de {{receita.nome_receita}}">
+        </div>
+
+        <div class="info-receita">
+          
+          <h2>Ingredientes</h2>
+
+          <ul>
+            {{#each ingredientesJoinQtd}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+
+        </div>
+
+        <div class="info-receita">
+          
+          <h3>Modo de Preparo</h3>
+
+          <p>{{receita.modo_de_preparo}}</p>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

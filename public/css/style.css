@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  max-width: 90%;
+  margin: 0 auto;
+  font-family: 'Rubik', sans-serif;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  html::before {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 13px !important;
+  }
+}

@@ -1,0 +1,170 @@
+/* Formulário */ 
+
+fieldset {
+  border: 0;
+}
+
+/* Estilo dos inputs geral*/
+
+.input-style {
+  margin: 30px 0;
+}
+
+.input-style input {
+  height: 45px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: normal;
+  background-color: #FEF6F1;
+  border: none;
+  border-radius: 10px;
+  color: #3F3E3E;
+  outline: none
+}
+
+.input-style label {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.31;
+  margin-bottom: 20px;
+  color: #3F3E3E;
+}
+
+.input-style textarea {
+  background-color: #FEF6F1;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 400px;
+  width: 100%;
+  resize: none;
+  outline: none;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.31;
+  color: #3F3E3E;
+}
+
+.large-input {
+  width: 18.8rem;
+}
+
+.normal-input {
+  width: 15.6rem
+}
+
+.small-input {
+  width: 6rem;
+} 
+
+
+/* Estilo dos inputs em individual*/
+
+/* Imagem */
+
+.inputImagem {
+  max-width: 280px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.inputImagem label{
+  width: 130px;
+  height: 100px;
+  padding: 8px;
+  border: 2px dashed #D96F32;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.inputImagem input[type="file"]{
+  position: absolute;
+  z-index: 1;
+  width: 0px;
+  visibility: hidden;
+}
+
+#preview {
+  max-width: 130px;
+  max-height: 100px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mensagem-error {
+  display: none;
+  position: absolute;
+  top: -50px;
+  width: auto;
+  height: 40px;
+  padding: 7px;
+  align-items: center;
+  background-color: tomato;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.875rem;
+  animation: slideTop ease-out .4s;
+}
+
+.mensagem-error:after{
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid tomato;
+	bottom: -15px;
+	left: 3%;
+}
+
+/* Ingredientes*/ 
+
+.input-ingrediente {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-ingrediente .small-input {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.input-ingrediente .btn-delete {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  padding: 7px;
+  border-radius: 10px;
+  color: #3F3E3E;
+  background-color: #FEF6F1;
+}
+
+/* Categorias*/
+
+.input-categoria .button-options {
+  display: inline-flex;
+  background-color: #FEF6F1;
+  padding: 10px;
+  margin-right: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  display: none !important;
+}
+
+.selected {
+  background-color: #FF9172 !important;
+}

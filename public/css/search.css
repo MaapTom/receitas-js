@@ -1,0 +1,10 @@
+.mensagem-de-busca {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mensagem-de-busca > :first-child{
+  margin: 25px;
+  width: 15rem;
+}
