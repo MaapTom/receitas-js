@@ -5,7 +5,7 @@ module.exports = (multer({
   storage: multer.diskStorage({
 
     destination: (req, file, cb) => {
-      cb(null, '../public/imagens-db');
+      cb(null,  'receitas/../public/imagens-db');
     },
     filename: (req, file, cb) => {
       cb(null, Date.now().toString() + '-' + file.originalname);
