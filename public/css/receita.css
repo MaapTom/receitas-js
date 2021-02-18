@@ -89,7 +89,7 @@ main span {
 
 .info-receita {
   max-width: 500px;
-  height: fit-content;
+  height: auto;
   padding: 26px;
   background-color: #FFEEE4;
   border-radius: 10px;
