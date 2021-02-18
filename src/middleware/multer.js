@@ -17,10 +17,9 @@ module.exports = (multer({
     const isAccepted = ['image/png', 'image/jpeg', 'image/jpg'].find( formatoAceito => formatoAceito == file.mimetype);
 
     if(isAccepted)  {
-      // Arquivo válido
       return cb(null, true);
     }
-      // Arquivo negado
+    
     return cb(null, false);
 
   }

@@ -1,8 +1,6 @@
-//Abrindo banco de dados e query de inserção
 const Database = require('./database/db')
 const saveReceita = require('./database/saveReceita')
 
-//exportando callbacks que renderizam as páginas
 module.exports = {
   async index(req, res) {
 
@@ -26,12 +24,7 @@ module.exports = {
       const results = await db.all(`SELECT * FROM receitas WHERE id = ${id}`)
       const receita = results[0];
 
-      const qtd = receita.qtd.split(',')
-      const ingredientesJoinQtd = qtd.map((item, index) => {
-        return item + ' ' + receita.ingredientes.split(',')[index];
-      })
-
-      return res.render('receita', {receita, ingredientesJoinQtd})
+      return res.render('receita', receita)
 
     } catch(error) {
       console.log(error)
@@ -82,7 +75,8 @@ module.exports = {
     return res.render('enviar-receita')
   },
 
-  async saveReceita(req, res) {
+  async saveReceita(req, res){
+  
     const dados = req.body;
 
     if (Object.values(dados).includes('')) {
@@ -94,13 +88,11 @@ module.exports = {
     }
 
     try {
-      // Salvar receita
       const db = await Database;
       await saveReceita(db, {
         nome_receita: dados.nomeReceita,
         imagem: req.file.filename,
         tipo: dados.tipo,
-        qtd: dados.quantidade,
         ingredientes: dados.ingrediente,
         tempo_preparo: dados.tempo_preparo,
         rendimento: dados.rendimento,
@@ -109,12 +101,10 @@ module.exports = {
 
       return res.redirect('/')
 
-    } catch (error) { 
-      console.log(error)
-      return res.render('server-error')
+      } catch (error) { 
+        console.log(error)
+        return res.render('server-error')
     }
 
+    }
   }
-}
-
-

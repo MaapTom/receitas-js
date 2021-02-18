@@ -2,19 +2,20 @@
 const inputsRadio = document.querySelectorAll('input[type="radio"]')
 
 inputsRadio.forEach((input) => {
-  input.addEventListener('click', addClass)
+  if (input.checked) {
+    input.previousElementSibling.classList.add('selected');
+  }
+  input.addEventListener('click', changeColorInput)
 })
 
-function addClass(event) {
-  inputsRadio.forEach(input => {
-    if (input.previousElementSibling.classList.contains('selected')) {
-      input.previousElementSibling.classList.remove('selected')
-    }
-    return;
+function changeColorInput(event) {
+  inputsRadio.forEach((input) => {
+    input.checked = false;
+    input.previousElementSibling.classList.remove('selected')
   })
-  event.target.previousElementSibling.classList.toggle('selected');
-  console.log(event.target)
-  console.log(event.target.checked)
+
+  event.target.checked = true;
+  event.target.previousElementSibling.classList.add('selected')
 }
 
 //Botão adicionar novo ingrediente
@@ -74,9 +75,6 @@ function readInputFile() {
         document.querySelector('.send-form').disabled = true;
         return;
       }
-
-
-      console.log(typeImages)
 
       preview.src = event.target.result;
     }

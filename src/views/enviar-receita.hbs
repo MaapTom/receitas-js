@@ -69,11 +69,10 @@
         	</div>
 
 					<div class="input-style">
-						<label for="ingrediente">Quantidade / Ingrediente</label>
+						<label for="ingrediente">Ingrediente</label>
 
 						<div class="input-style input-ingrediente">
-							<input type="text" name="quantidade" class="small-input" placeholder="Ex: 500g" required>
-							<input type="text" name="ingrediente" class="normal-input" placeholder="de Queijo Parmesão" required>
+							<input type="text" name="ingrediente" class="large-input" placeholder="Ex: 500g de Queijo Parmesão" required>
 						</div>
 
 						<a href="" class="normal-button button-add" title="Adicionar mais um ingrediente">+ Adicionar outro ingrediente</a>
@@ -82,7 +81,7 @@
 					<div class="input-style input-categoria">
 
 						<label>Selecionar categoria da receita</label> 
-						<label for="sobremesa" class="button-options">Sobremesa</label><input type="radio" value="Sobremesa" name="tipo" id="sobremesa">
+						<label for="sobremesa" class="button-options">Sobremesa</label><input type="radio" value="Sobremesa" name="tipo" id="sobremesa" checked>
 						<label for="prato-salgado" class="button-options">Prato Salgado</label><input type="radio" value="Prato-salgado" name="tipo" id="prato-salgado">
 						<label for="prato-saudavel" class="button-options">Prato Saudável</label><input type="radio" value="Prato-saudavel" name="tipo" id="prato-saudavel">
 							
@@ -101,7 +100,6 @@
 					<div class="input-style">
 						<label for="">Modo de preparo</label>
 						<textarea name="modo_de_preparo" rows="10" placeholder="Como se prepara?" required></textarea>
-						<p>Após o envio sua receita será enviado para análise. ;)</p>
 					</div>
 
 					<button type="submit" class="normal-button send-form">Enviar receita</button>

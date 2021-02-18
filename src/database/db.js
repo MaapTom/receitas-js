@@ -1,4 +1,3 @@
-//Chamando sqlite
 const Database = require('sqlite-async')
 
 function execute(db) {
@@ -8,7 +7,6 @@ function execute(db) {
       nome_receita TEXT,
       imagem TEXT,
       tipo TEXT,
-      qtd TEXT,
       ingredientes TEXT,
       tempo_de_preparo TEXT,
       rendimento TEXT,
@@ -17,6 +15,4 @@ function execute(db) {
 `);
 }
 
-// criando um arquivo database.sqlite no meu diretório 
-// e executando uma função de criação de tabela, e exportando para utiliza-lo
 module.exports = Database.open(__dirname + '/database.sqlite').then(execute)

@@ -14,8 +14,8 @@ Database.then(async (db) => {
   // })
 
 
-  // const selectReceitas = await db.all("SELECT * FROM receitas")
+  const selectReceitas = await db.all("DELETE  FROM receitas")
   // const deleteInsert = await db.run("DELETE FROM receitas WHERE id = '13'");
-  // console.log(selectReceitas)
+  console.log(selectReceitas)
 
 })
