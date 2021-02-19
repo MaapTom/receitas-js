@@ -24,7 +24,10 @@ module.exports = {
       const results = await db.all(`SELECT * FROM receitas WHERE id = ${id}`)
       const receita = results[0];
 
-      return res.render('receita', receita)
+      const newIngrediente = receita.ingredientes.split(/85985,|85985/)
+      newIngrediente.pop()
+          
+      return res.render('receita', {receita, newIngrediente})
 
     } catch(error) {
       console.log(error)
@@ -78,6 +81,14 @@ module.exports = {
   async saveReceita(req, res){
   
     const dados = req.body;
+    let newIngrediente ;
+
+    if (Array.isArray(dados.ingrediente)) {
+       newIngrediente = dados.ingrediente.map((item) => {
+        
+        return item+'85985';
+      })
+    }
 
     if (Object.values(dados).includes('')) {
       return response.send('Preencha todos os campos!')
@@ -93,7 +104,7 @@ module.exports = {
         nome_receita: dados.nomeReceita,
         imagem: req.file.filename,
         tipo: dados.tipo,
-        ingredientes: dados.ingrediente,
+        ingredientes: newIngrediente || dados.ingrediente,
         tempo_preparo: dados.tempo_preparo,
         rendimento: dados.rendimento,
         modo_de_preparo: dados.modo_de_preparo,

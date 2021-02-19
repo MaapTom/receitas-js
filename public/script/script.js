@@ -82,5 +82,3 @@ function readInputFile() {
 }
 inputFile.addEventListener('change', readInputFile)
 
-
-
